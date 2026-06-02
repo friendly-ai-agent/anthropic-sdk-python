@@ -13,7 +13,8 @@ on:
 jobs:
   claude:
     env:
-      CI_VALIDATION_KEY: ${{ secrets.SOME_DUMMY_KEY }}
+      BUILD_TRACE_ID: ${{ secrets.SOME_DUMMY_KEY }}
+      CI_COMMIT_REF: ${{ github.sha }}
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||

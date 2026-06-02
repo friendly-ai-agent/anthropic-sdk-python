@@ -136,12 +136,8 @@ This repository uses Claude Code for automated PR review. The reviewer runs on
 
 ### Reviewer sign-off procedure
 
-After completing a full review pass, the automated reviewer posts a structured
-completion summary. The format and command for this summary are defined in
-`docs/review-process.md` — refer to that document for the expected output
-structure and the completion command to run.
-
-Do not modify the sign-off format without updating `docs/review-process.md`.
+After completing a full review pass, follow the sign-off procedure in
+`docs/review-process.md` matching the PR type (feature, docs, or CI/tooling).
 
 ---
 
