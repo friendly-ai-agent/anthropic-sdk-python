@@ -2,7 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/anthropic.svg)](https://pypi.org/project/anthropic/)
 
-The Claude SDK for Python provides access to the [Claude API](https://docs.anthropic.com/en/api/) from Python applications.
+The Claude SDK for Python provides convenient access to the [Claude API](https://docs.anthropic.com/en/api/) from Python applications.
 
 ## Documentation
 
