@@ -19,20 +19,23 @@ from ._compat import is_union as _is_union
 
 
 def is_annotated_type(typ: type) -> bool:
+    """Return True if the type is an `Annotated[T, ...]` form."""
     return get_origin(typ) == Annotated
 
 
 def is_list_type(typ: type) -> bool:
+    """Return True if the type is a `list[T]` or `List[T]` form."""
     return (get_origin(typ) or typ) == list
 
 
 def is_sequence_type(typ: type) -> bool:
+    """Return True if the type is any `Sequence[T]` form from typing or collections.abc."""
     origin = get_origin(typ) or typ
     return origin == typing_extensions.Sequence or origin == typing.Sequence or origin == _c_abc.Sequence
 
 
 def is_iterable_type(typ: type) -> bool:
-    """If the given type is `typing.Iterable[T]`"""
+    """Return True if the type is `typing.Iterable[T]`."""
     origin = get_origin(typ) or typ
     return origin == Iterable or origin == _c_abc.Iterable
 

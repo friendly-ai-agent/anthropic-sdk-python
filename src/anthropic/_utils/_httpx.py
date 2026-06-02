@@ -14,6 +14,7 @@ from urllib.request import getproxies
 
 
 def is_ipv4_hostname(hostname: str) -> bool:
+    """Return True if hostname is a bare IPv4 address (with optional path component)."""
     try:
         ipaddress.IPv4Address(hostname.split("/")[0])
     except Exception:
@@ -22,6 +23,7 @@ def is_ipv4_hostname(hostname: str) -> bool:
 
 
 def is_ipv6_hostname(hostname: str) -> bool:
+    """Return True if hostname is a bare IPv6 address (with optional path component)."""
     try:
         ipaddress.IPv6Address(hostname.split("/")[0])
     except Exception:
