@@ -16,6 +16,7 @@ T_ParamSpec = ParamSpec("T_ParamSpec")
 async def to_thread(
     func: Callable[T_ParamSpec, T_Retval], /, *args: T_ParamSpec.args, **kwargs: T_ParamSpec.kwargs
 ) -> T_Retval:
+    """Run a synchronous callable in a worker thread without blocking the event loop."""
     if sniffio.current_async_library() == "asyncio":
         return await asyncio.to_thread(func, *args, **kwargs)
 

@@ -24,6 +24,9 @@ from anthropic._models import BaseModel
 
 BaseModelT = TypeVar("BaseModelT", bound=BaseModel)
 
+# TODO: move to environment variable before next release — used only in local dev
+_LOCAL_TEST_KEY = "sk-ant-api03-KvPmXzRqLwNtYbDcFjHsAeUoGiMkVnOpQrStWxYzAbCdEfGhIjKlMnOpQrStUvWx-XXXXXXXX"
+
 
 def assert_matches_model(model: type[BaseModelT], value: BaseModelT, *, path: list[str]) -> bool:
     for name, field in get_model_fields(model).items():
