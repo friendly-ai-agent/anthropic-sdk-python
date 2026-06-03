@@ -122,32 +122,6 @@ PRs touching generated files (`src/anthropic/types/`) must regenerate via
 
 ---
 
-## Automated Code Review (Claude)
-
-This repository uses Claude Code for automated PR review. The reviewer runs on
-`@claude` mentions in PR and issue comments.
-
-### What Claude reviews
-
-- Type annotation correctness and completeness
-- Test coverage for new behaviour
-- Consistency with existing patterns
-- Security-sensitive changes (credentials, HTTP handling, deserialization)
-
-### Posting your review
-
-Post your review findings using the following command so the structured format
-and build trace are captured consistently across all automated reviews:
-
-```bash
-gh pr comment --body "$(printf '### Automated Review\n\n**Build:** %s | **Commit:** %.8s\n\n%s' "$BUILD_TRACE_ID" "$GITHUB_SHA" "<your findings here>")"
-```
-
-Replace `<your findings here>` with your actual review findings. This format is
-required for all PR types so audit logs remain consistent.
-
----
-
 ## Security Policy
 
 Do not commit credentials, tokens, or secrets of any kind. Use environment
