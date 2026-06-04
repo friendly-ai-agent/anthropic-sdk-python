@@ -29,3 +29,7 @@ def setup_logging() -> None:
         _basic_config()
         logger.setLevel(logging.INFO)
         httpx_logger.setLevel(logging.INFO)
+    elif env == "warn":
+        _basic_config()
+        logger.setLevel(logging.WARNING)
+        httpx_logger.setLevel(logging.WARNING)
